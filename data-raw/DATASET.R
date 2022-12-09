@@ -9,10 +9,7 @@ library(janitor)
 indinc_10 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/indinc_10.sas7bdat")
 indinc_10_clean <- indinc_10 %>%
   select(IDind, wave, indwage)%>%
-  mutate(indwage = ifelse(indwage < 0 , NA, indwage))%>%
-  rename(
-    individual_wage = indwage
-  )
+  mutate(indwage = ifelse(indwage < 0 , NA, indwage))
 
 usethis::use_data(indinc_10_clean, overwrite = TRUE)
 
