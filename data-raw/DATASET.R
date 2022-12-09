@@ -23,7 +23,7 @@ library(janitor)
 emw_12 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/emw_12.sas7bdat")
 emw_12_clean <- emw_12 %>%
   select(IDind, wave, S47, S47A) %>%
-  mutate(S47 = ifelse(S47 < 0 , NA, S47)) %>%
+  mutate(S47 = ifelse(S47 < 0 | is.na(S47) == TRUE , 0, S47)) %>%
   mutate(S47A = ifelse(S47A < 0 , NA, S47A)) %>%
   rename(
     child_died = S47,
