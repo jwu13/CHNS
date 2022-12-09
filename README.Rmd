@@ -13,44 +13,72 @@ knitr::opts_chunk$set(
 )
 ```
 
-# chns
+# CHNS
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/chns)](https://CRAN.R-project.org/package=chns)
+[![CRAN status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
+[![R-CMD-check](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of chns is to ...
+
+## Purpose
+
+We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `surveyjanitor` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
+
+## Target audience
+
+This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
+
 
 ## Installation
 
-You can install the development version of chns like so:
-
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+You can install the development version of surveyjanitor like so:
+```{r eval=FALSE}
+devtools::install_github("Bettyjpu/chns")
 ```
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+## Load
+
+You can load it by:
 
 ```{r example}
 library(chns)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Example: Get Real Income with selected base year.
 
-```{r cars}
-summary(cars)
+This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
+```{r}
+real_income(base_year=1989) 
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
 
-You can also embed plots, for example:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+## Project Proposal
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+We would like to build an R package that makes importing data, tidying data and data analysis more user friendly for social science data sets, specifically, we'll be creating the following functions for The China Health and Nutrition Survey (CHNS) data. CHNS contains panel data over two decades and we would like to reduce repetitive data-tidying work for researchers.
+
+We will be creating the following functions for this project, serving both data wrangling and data visualization purposes on CHNS data.
+
+### Data Wrangling:
+1) `real_income(base_year)`: This function calculates the deflated/inflated real income based on the selected survey year. 
+
+2) `num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
+
+### Data Visualization:
+3) `map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
+
+For Project Phase 3, we would like to import more data sets from CHNS and more variables. We plan to create similar data wrangling functions for the newly imported variables so that that would make data analysis in R more convenient.
+
+For Data Visualization, we plan to finish mapping by the survey province and visualize more useful information.
+
+
+## Group Members 
+
+- Junru Wu
+- Betty Pu
+
+
+
