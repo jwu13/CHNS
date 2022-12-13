@@ -10,6 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
 [![R-CMD-check](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Purpose
