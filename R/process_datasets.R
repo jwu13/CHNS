@@ -21,5 +21,16 @@
 #'   \item{child_births}{Total number of Children given births to}
 #'   ...
 #' }
+#'
+#' #' @format ## `map_dat`
+#' A data frame that could map the average income by selected province and year:
+#' \describe{
+#'   \item{t1}{provinces included in the survey}
+#'   \item{wave}{survey year}
+#'   \item{indwage}{annual wage, bonus, and other income}
+#' }
+#' @source <https://www.cpc.unc.edu/projects/china>
+"map_dat"
+
 #' @source <https://www.cpc.unc.edu/projects/china>
 "emw_12_clean"
