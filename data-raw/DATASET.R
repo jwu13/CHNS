@@ -36,9 +36,9 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 # map_dat
 indinc_10 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/indinc_10.sas7bdat")
 map_dat <- indinc_10 %>%
+  select(wave, indwage, t1)%>%
   rename(province = t1) %>%
-  select(wave, indwage, province)%>%
-  mutate(province = case_when(
+  mutate(province_en = case_when(
     province == 11 ~ "beijing",
     province == 21 ~ "liaoning",
     province == 23 ~ "heilongjiang",
@@ -50,12 +50,36 @@ map_dat <- indinc_10 %>%
     province == 43 ~ "hunan",
     province == 45 ~ "guangxi",
     province == 52 ~ "guizhou",
-    province == 55 ~ "chongqing"))
-
-map_dat <- map_dat %>%
+    province == 55 ~ "chongqing"))%>%
   mutate(indwage = ifelse(indwage < 0 , NA, indwage))%>%
   na.omit(indwage)%>%
-  group_by(province, wave)%>%
+  group_by(province_en, wave)%>%
   summarize(wage_mean = mean(indwage))
+
+# merge this data set with the map name data set
+province_name <- data.frame (regionNames("china"))%>%
+  rename(name = regionNames..china..)
+
+province_name <- province_name%>%
+  mutate(province_en = case_when (
+    name == "北京市"~ "beijing",
+    name == "辽宁省"~ "liaoning",
+    name == "黑龙江省"~ "heilongjiang",
+    name == "上海市"~ "shanghai",
+    name == "江苏省"~ "jiangsu",
+    name == "山东省"~ "shandong",
+    name == "河南省"~ "henan",
+    name == "湖北省"~ "hubei",
+    name == "湖南省"~ "hunan",
+    name == "广西省"~ "guangxi",
+    name == "贵州省"~ "guizhou",
+    name == "重庆市"~ "chongqing",
+  ))%>%
+  na.omit(name)
+
+merged_map_dat <- merge(map_dat,province_name,by="province_en")
+
+
+
 
 

@@ -25,7 +25,7 @@
 #' #' @format ## `map_dat`
 #' A data frame that could map the average income by selected province and year:
 #' \describe{
-#'   \item{t1}{provinces included in the survey}
+#'   \item{province}{provinces included in the survey}
 #'   \item{wave}{survey year}
 #'   \item{indwage}{annual wage, bonus, and other income}
 #' }
