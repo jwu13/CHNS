@@ -12,6 +12,7 @@ Imports:
     dplyr,
     janitor,
     leaflet,
+    leafletCN,
     readr,
     haven
 Suggests: 
