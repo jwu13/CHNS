@@ -37,6 +37,10 @@ globalVariables(c("map_dat","indwage","wave","province", "year"))
     # df$wage_mean_new = cut(df$wage_mean, c(0, 5000, 10000, 15000, 20000, 30000, 40000))
     # df_new <- data.frame(df)
 
+    # This following code works
+    #merged_1993 <- filter(merged_map_dat, wave ==1993)
+    #geojsonMap(merged_1993, "china", namevar = ~name, valuevar = ~wage_mean)
+
     map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean, palette = topo.colors(3), colorMethod = "factor")
 
     return(map)
