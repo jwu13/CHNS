@@ -42,3 +42,4 @@ globalVariables(c("map_dat","indwage","wave","province", "year"))
   }
 
 
+

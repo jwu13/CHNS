@@ -36,12 +36,8 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 # map_dat
 indinc_10 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/indinc_10.sas7bdat")
 map_dat <- indinc_10 %>%
-  select(wave, indwage, t1)%>%
-  mutate(indwage = ifelse(indwage < 0 , NA, indwage))%>%
-  na.omit(indwage)%>%
-  group_by(t1, wave)%>%
-  summarize(wage_mean = mean(indwage)) %>%
   rename(province = t1) %>%
+  select(wave, indwage, province)%>%
   mutate(province = case_when(
     province == 11 ~ "beijing",
     province == 21 ~ "liaoning",
@@ -55,4 +51,11 @@ map_dat <- indinc_10 %>%
     province == 45 ~ "guangxi",
     province == 52 ~ "guizhou",
     province == 55 ~ "chongqing"))
+
+map_dat <- map_dat %>%
+  mutate(indwage = ifelse(indwage < 0 , NA, indwage))%>%
+  na.omit(indwage)%>%
+  group_by(province, wave)%>%
+  summarize(wage_mean = mean(indwage))
+
 
