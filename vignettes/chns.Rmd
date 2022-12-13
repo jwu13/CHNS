@@ -18,14 +18,6 @@ knitr::opts_chunk$set(
 
 This is our Vignette.
 
-# CHNS
-
-<!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
-[![R-CMD-check](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-
 
 ## Purpose
 
@@ -34,14 +26,6 @@ We wanted to create a package that helps researchers explore China Health and Nu
 ## Target audience
 
 This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
-
-
-## Installation
-
-You can install the development version of surveyjanitor like so:
-```{r eval=FALSE}
-devtools::install_github("Bettyjpu/chns")
-```
 
 
 ## Load
