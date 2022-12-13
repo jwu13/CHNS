@@ -10,12 +10,74 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
 
-```{r setup}
+This is our Vignette.
+
+# CHNS
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
+[![R-CMD-check](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Bettyjpu/chns/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+
+## Purpose
+
+We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `surveyjanitor` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
+
+## Target audience
+
+This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
+
+
+## Installation
+
+You can install the development version of surveyjanitor like so:
+```{r eval=FALSE}
+devtools::install_github("Bettyjpu/chns")
+```
+
+
+## Load
+
+You can load it by:
+
+```{r example}
 library(chns)
 ```
 
-This is our vignette
+## Example: Get Real Income with selected base year.
+
+This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
+```{r}
+real_income(base_year=1989) 
+```
+
+
+
+## Project Proposal
+
+We would like to build an R package that makes importing data, tidying data and data analysis more user friendly for social science data sets, specifically, we'll be creating the following functions for The China Health and Nutrition Survey (CHNS) data. CHNS contains panel data over two decades and we would like to reduce repetitive data-tidying work for researchers.
+
+We will be creating the following functions for this project, serving both data wrangling and data visualization purposes on CHNS data.
+
+### Data Wrangling:
+1) `real_income(base_year)`: This function calculates the deflated/inflated real income based on the selected survey year. 
+
+2) `num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
+
+### Data Visualization:
+3) `map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
+
+For Project Phase 3, we would like to import more data sets from CHNS and more variables. We plan to create similar data wrangling functions for the newly imported variables so that that would make data analysis in R more convenient.
+
+For Data Visualization, we plan to finish mapping by the survey province and visualize more useful information.
+
+
