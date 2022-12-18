@@ -76,8 +76,10 @@ province_name <- province_name%>%
     name == "重庆市"~ "chongqing",
   ))%>%
   na.omit(name)
+map_dat_clean <- merge(map_dat,province_name,by="province_en")
 
-merged_map_dat <- merge(map_dat,province_name,by="province_en")
+usethis::use_data(map_dat_clean, overwrite = TRUE)
+
 
 
 
