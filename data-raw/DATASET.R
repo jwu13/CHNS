@@ -34,7 +34,7 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 
 
 # map_dat
-indinc_10 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/indinc_10.sas7bdat")
+indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
 map_dat <- indinc_10 %>%
   select(wave, indwage, t1)%>%
   rename(province = t1) %>%
