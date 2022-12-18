@@ -59,7 +59,7 @@ map_dat <- indinc_10 %>%
 # merge this data set with the map name data set
 province_name <- data.frame (regionNames("china"))%>%
   rename(name = regionNames..china..)
-
+# add the chinese names to the data set so that the province names match that in package leafletCN.
 province_name <- province_name%>%
   mutate(province_en = case_when (
     name == "北京市"~ "beijing",
