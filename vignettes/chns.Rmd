@@ -16,40 +16,58 @@ knitr::opts_chunk$set(
 )
 ```
 
-This is our Vignette.
+The `CHNS` package contains data on Chinese Health and Nutrition Survey with 10 years of survey data over the period of 1989 to 2015.
 
+## Inspiration 
+We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `CHNS` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
 
-## Purpose
+## Datasets Included
+All the datasets are taken from [CHNS] (https://www.cpc.unc.edu/projects/china/data)
 
-We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `surveyjanitor` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
+-   `emw_12_clean`: dataset of
+-   `indinc_10_clean`: dataset of
+-   `map_dat_clean`: dataset
 
-## Target audience
+## Who should use this package?
 
 This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
 
+## What does the data look like?
 
-## Load
+Here's the first 5 rows of the `emw_12_clean` dataset
 
-You can load it by:
-
-```{r example}
-library(chns)
+```{r}
+head(emw_12_clean)
 ```
 
-## Example: Get Real Income with selected base year.
+## What can we do with this package?
+
+We can use this package to...
+
+Below are some examples of the existing functionality the package provides, including data wrangling and data visualization techniques.
+
+
+
+## Example 1: Get Real Income with selected base year.
 
 This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
 ```{r}
 real_income(base_year=1989) 
 ```
 
+## Example 2: Get Number of Children a women has up to an inputted year.
 
+```{r}
+num_of_children(year = 2006) 
+```
 
-## Project Proposal
+## Example 3: Get a map with province mean income by an input year
 
-We would like to build an R package that makes importing data, tidying data and data analysis more user friendly for social science data sets, specifically, we'll be creating the following functions for The China Health and Nutrition Survey (CHNS) data. CHNS contains panel data over two decades and we would like to reduce repetitive data-tidying work for researchers.
+Income is divided into categories with a unit of 1k.
+```{r}
+map_income(year = 2006) 
+```
 
-We will be creating the following functions for this project, serving both data wrangling and data visualization purposes on CHNS data.
 
 ### Data Wrangling:
 1) `real_income(base_year)`: This function calculates the deflated/inflated real income based on the selected survey year. 
@@ -58,9 +76,5 @@ We will be creating the following functions for this project, serving both data 
 
 ### Data Visualization:
 3) `map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
-
-For Project Phase 3, we would like to import more data sets from CHNS and more variables. We plan to create similar data wrangling functions for the newly imported variables so that that would make data analysis in R more convenient.
-
-For Data Visualization, we plan to finish mapping by the survey province and visualize more useful information.
 
 
