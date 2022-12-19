@@ -35,7 +35,7 @@ This package can be used by researchers and students who are interested in using
 
 You can install the development version of surveyjanitor like so:
 ```{r eval=FALSE}
-devtools::install_github("Bettyjpu/chns")
+devtools::install_github("jwu13/CHNS")
 ```
 
 
@@ -47,13 +47,24 @@ You can load it by:
 library(chns)
 ```
 
-## Example: Get Real Income with selected base year.
+## Example 1: Get Real Income with selected base year.
 
 This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
 ```{r}
 real_income(base_year=1989) 
 ```
 
+## Example 2: Get Number of Children a women has up to an inputted year.
+
+```{r}
+num_of_children(year = 2006) 
+```
+## Example 3: Get a map with province mean income by an input year
+
+Income is divided into categories with a unit of 1k.
+```{r}
+map_income(year = 2006) 
+```
 
 
 ## Project Proposal
