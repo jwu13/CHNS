@@ -28,7 +28,7 @@
 #' @format ## `map_dat_clean`
 #' A data frame that could map the average income by selected province and year:
 #' \describe{
-#'   \item{province_en}{provinces included in the survey in english}
+#'   \item{province_en}{province names in english}
 #'   \item{wave}{survey year}
 #'   \item{wage_mean}{intial wage in unit of 1}
 #'   \item{name}{name of provinces in chinese}
