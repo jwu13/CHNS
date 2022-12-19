@@ -77,10 +77,17 @@ province_name <- province_name%>%
     name == "重庆市"~ "chongqing",
   ))%>%
   na.omit(name)
-map_dat_clean <- merge(map_dat,province_name,by="province_en")
+
+# merge the dataset with the province names in leafletCN
+map_dat_merge <- merge(map_dat,province_name,by="province_en")
+
+# Divide wage_mean by 1000 so that wage has unit 1000.
+map_dat_clean <- map_dat_merge %>%
+  mutate(wage_mean_k = wage_mean/1000)
+  # create categories
+map_dat_clean$wage_mean_cat = cut(map_dat_clean$wage_mean_k, c(0, 1, 5, 10, 20, 30, 50, 80, 100))
 
 usethis::use_data(map_dat_clean, overwrite = TRUE)
-
 
 
 
