@@ -79,11 +79,7 @@ We will be creating the following functions for this project, serving both data 
 2) `num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
 
 ### Data Visualization:
-3) `map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
-
-For Project Phase 3, we would like to import more data sets from CHNS and more variables. We plan to create similar data wrangling functions for the newly imported variables so that that would make data analysis in R more convenient.
-
-For Data Visualization, we plan to finish mapping by the survey province and visualize more useful information.
+3) `map_income(year)`: This function would potentially map the average income by province on the map for the selected year.
 
 
 ## Group Members 
