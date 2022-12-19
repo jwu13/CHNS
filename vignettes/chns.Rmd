@@ -37,7 +37,7 @@ This package can be used by researchers and students who are interested in using
 Here's the first 5 rows of the `emw_12_clean` dataset
 
 ```{r}
-head(emw_12_clean)
+# head (emw_12_clean)
 ```
 
 ## What can we do with this package?
@@ -52,20 +52,20 @@ Below are some examples of the existing functionality the package provides, incl
 
 This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
 ```{r}
-real_income(base_year=1989) 
+chns::real_income(base_year=1989) 
 ```
 
 ## Example 2: Get Number of Children a women has up to an inputted year.
 
 ```{r}
-num_of_children(year = 2006) 
+chns::num_of_children(year = 2006) 
 ```
 
 ## Example 3: Get a map with province mean income by an input year
 
 Income is divided into categories with a unit of 1k.
 ```{r}
-map_income(year = 2006) 
+chns::map_income(year = 2006) 
 ```
 
 
