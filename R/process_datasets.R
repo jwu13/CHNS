@@ -21,15 +21,19 @@
 #'   \item{child_births}{Total number of Children given births to}
 #'   ...
 #' }
-#'#' @source <https://www.cpc.unc.edu/projects/china>
+#' @source <https://www.cpc.unc.edu/projects/china>
 "emw_12_clean"
-
+#'
+#'
 #' @format ## `map_dat_clean`
 #' A data frame that could map the average income by selected province and year:
 #' \describe{
-#'   \item{province}{provinces included in the survey}
+#'   \item{province_en}{provinces included in the survey in english}
 #'   \item{wave}{survey year}
-#'   \item{indwage}{annual wage, bonus, and other income}
+#'   \item{wage_mean}{intial wage in unit of 1}
+#'   \item{name}{name of provinces in chinese}
+#'   \item{wage_mean_k}{wage in unit of 1000}
+#'   \item{wage_mean_cat}{mean wage in unit of 1000 divided into categories for mapping}
 #' }
 #' @source <https://www.cpc.unc.edu/projects/china>
 "map_dat_clean"
