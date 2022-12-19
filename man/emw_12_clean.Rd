@@ -15,10 +15,8 @@ A data frame with 26,616 rows and 60 columns:
 \item{child_births}{Total number of Children given births to}
 ...
 }
+#' @source \url{https://www.cpc.unc.edu/projects/china}
 }
-}
-\source{
-\url{https://www.cpc.unc.edu/projects/china}
 }
 \usage{
 emw_12_clean
