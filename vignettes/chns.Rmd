@@ -1,8 +1,9 @@
 ---
 title: "chns"
+author: "Betty Pu, and Junru Wu"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{chns}
+  %\VignetteIndexEntry{CHNS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,8 +13,17 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  warnings = FALSE,
+  errors = FALSE
 )
+```
+
+```{r setup, include=FALSE}
+library(chns)
+library(dplyr)
+library(haven)
+library(leafletCN)
 ```
 
 The `CHNS` package contains data on Chinese Health and Nutrition Survey with 10 years of survey data over the period of 1989 to 2015.
@@ -37,7 +47,7 @@ This package can be used by researchers and students who are interested in using
 Here's the first 5 rows of the `emw_12_clean` dataset
 
 ```{r}
-# head (emw_12_clean)
+head (emw_12_clean)
 ```
 
 ## What can we do with this package?
@@ -51,30 +61,30 @@ Below are some examples of the existing functionality the package provides, incl
 ## Example 1: Get Real Income with selected base year.
 
 This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
+
+`real_income(base_year)`: This function calculates the deflated/inflated real income based on the selected survey year. 
+
 ```{r}
-chns::real_income(base_year=1989) 
+real_income(base_year=1989) 
 ```
 
 ## Example 2: Get Number of Children a women has up to an inputted year.
 
+`num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
+
 ```{r}
-chns::num_of_children(year = 2006) 
+num_of_children(year = 2006) 
 ```
 
 ## Example 3: Get a map with province mean income by an input year
 
+`map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
+
 Income is divided into categories with a unit of 1k.
 ```{r}
-chns::map_income(year = 2006) 
+map_income(year = 2006) 
 ```
 
 
-### Data Wrangling:
-1) `real_income(base_year)`: This function calculates the deflated/inflated real income based on the selected survey year. 
-
-2) `num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
-
-### Data Visualization:
-3) `map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
 
 
