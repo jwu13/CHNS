@@ -1,4 +1,4 @@
-## code to prepare `emw_12` and `indinc_10` dataset goes here
+## code to prepare `emw_12_clean`, `indinc_10_clean`, and `map_dat_clean` dataset goes here
 
 ## clean indinc_10
 
@@ -6,7 +6,7 @@ library(tidyverse)
 library(haven)
 library(janitor)
 
-# indinc_10_clean data set is use in the function `real_income ()`
+# `indinc_10_clean` data set is use in the function `real_income ()`
 indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
 indinc_10_clean <- indinc_10 %>%
   select(IDind, wave, indwage)%>%
@@ -38,7 +38,6 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 library(tidyverse)
 library(haven)
 library(leafletCN)
-indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
 map_dat <- indinc_10 %>%
   select(wave, indwage, t1)%>%
   rename(province = t1) %>%
@@ -63,6 +62,7 @@ map_dat <- indinc_10 %>%
 # merge this data set with the map name data set
 province_name <- data.frame (regionNames("china"))%>%
   rename(name = regionNames..china..)
+
 # add the chinese names to the data set so that the province names match that in package leafletCN.
 province_name <- province_name%>%
   mutate(province_en = case_when (
@@ -88,7 +88,7 @@ map_dat_merge <- merge(map_dat,province_name,by="province_en")
 map_dat_clean <- map_dat_merge %>%
   mutate(wage_mean_k = wage_mean/1000)
   # create categories
-map_dat_clean$wage_mean_cat = cut(map_dat_clean$wage_mean_k, c(0, 1, 5, 10, 20, 30, 50, 80, 100))
+map_dat_clean$wage_mean_cat = cut(map_dat_clean$wage_mean_k, c(0, 1, 2.5, 5, 10, 20, 30, 50, 80, 100))
 
 usethis::use_data(map_dat_clean, overwrite = TRUE)
 

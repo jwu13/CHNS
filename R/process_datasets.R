@@ -25,6 +25,7 @@
 "emw_12_clean"
 #'
 #'
+#' Data set for mapping average income on China's map
 #' @format ## `map_dat_clean`
 #' A data frame that could map the average income by selected province and year:
 #' \describe{

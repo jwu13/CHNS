@@ -1,4 +1,4 @@
-globalVariables(c("map_dat_clean","indwage","wave","province", "year"))
+globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mean_cat"))
 #' Function for mapping average income by year and provinces included in the survey
 #'
 #' Provides the map of annual province wage an inputted base year (1989,1991,1993,1997,2000,2004,2006,2009,2011,2015) for provinces included in the survey.
