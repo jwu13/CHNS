@@ -5,9 +5,6 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year"))
 #'
 #' @param year survey year. Find possible years in the  `map_dat_clean` data frame.
 #' @return A map with the annual average income mapped on China's map for provinces in the survey. For provinces that are not included in the survey, the color is grey.
-#' @examples
-#' map_income(2015)
-#' real_income(1989)
 #' @import dplyr
 #' @import leafletCN
 #' @export

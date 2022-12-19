@@ -15,7 +15,3 @@ A map with the annual average income mapped on China's map for provinces in the 
 \description{
 Provides the map of annual province wage an inputted base year (1989,1991,1993,1997,2000,2004,2006,2009,2011,2015) for provinces included in the survey.
 }
-\examples{
-map_income(2015)
-real_income(1989)
-}
