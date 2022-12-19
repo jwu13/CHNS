@@ -19,20 +19,18 @@ library(tidyverse)
 library(haven)
 library(janitor)
 
-# ever_married_women
+# emw_12 dataset for funtion `num_of_children( )`
 emw_12 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/emw_12.sas7bdat")
 emw_12_clean <- emw_12 %>%
   # This data set contains 60 variables but we are only going to use 4 in our package: IDind, wave, S47, S47A
   select(IDind, wave, S47, S47A) %>%
   mutate(S47 = ifelse(S47 < 0 | is.na(S47) == TRUE, 0, S47)) %>%
   mutate(S47A = ifelse(S47A <0 | is.na(S47A) == TRUE, 0, S47A)) %>%
-  #mutate(S47A = ifelse(S47A < 0 , NA, S47A)) %>%
   rename(
     child_died = S47,
     child_births = S47A
   )
 usethis::use_data(emw_12_clean, overwrite = TRUE)
-
 
 
 # map_dat
