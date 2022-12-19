@@ -37,7 +37,7 @@ data cleaning aid tool.
 You can install the development version of surveyjanitor like so:
 
 ``` r
-devtools::install_github("Bettyjpu/chns")
+devtools::install_github("jwu13/CHNS")
 ```
 
 ## Load
@@ -48,7 +48,7 @@ You can load it by:
 library(chns)
 ```
 
-## Example: Get Real Income with selected base year.
+## Example 1: Get Real Income with selected base year.
 
 This is a basic example for `real_income()` that returns a tibble with
 income weighted over inflation for the selected base year.
@@ -70,6 +70,30 @@ real_income(base_year=1989)
 #> 10 211103005002  1989    784.            784.  1989
 #> # … with 88,156 more rows
 ```
+
+## Example 2: Get Number of Children a women has up to an inputted year.
+
+``` r
+num_of_children(year = 2006) 
+#> # A tibble: 385 × 5
+#>           IDind  wave child_died child_births num_children
+#>           <dbl> <dbl>      <dbl>        <dbl>        <dbl>
+#>  1 211101015002  1993          1            2            1
+#>  2 211101015002  2000          1            2            1
+#>  3 211101015002  2004          1            2            1
+#>  4 211101019002  1993          2            3            1
+#>  5 211208006001  2000          3            6            3
+#>  6 212201003002  1993          1            3            2
+#>  7 212202002002  1993          1            4            3
+#>  8 212202002002  2000          1            4            3
+#>  9 212202005002  1993          1            4            3
+#> 10 212202006002  1993          1            5            4
+#> # … with 375 more rows
+```
+
+## Example 3: Get a map with province mean income by an input year
+
+Income is divided into categories with a unit of 1k.
 
 ## Project Proposal
 
@@ -93,16 +117,8 @@ both data wrangling and data visualization purposes on CHNS data.
 
 ### Data Visualization:
 
-3)  `map_china(year)`: This function would potentially map the
-    population density by province on the map for the selected year.
-
-For Project Phase 3, we would like to import more data sets from CHNS
-and more variables. We plan to create similar data wrangling functions
-for the newly imported variables so that that would make data analysis
-in R more convenient.
-
-For Data Visualization, we plan to finish mapping by the survey province
-and visualize more useful information.
+3)  `map_income(year)`: This function would potentially map the average
+    income by province on the map for the selected year.
 
 ## Group Members
 

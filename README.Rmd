@@ -59,12 +59,10 @@ real_income(base_year=1989)
 ```{r}
 num_of_children(year = 2006) 
 ```
+
 ## Example 3: Get a map with province mean income by an input year
 
 Income is divided into categories with a unit of 1k.
-```{r}
-map_income(year = 2006) 
-```
 
 
 ## Project Proposal
