@@ -7,7 +7,7 @@ library(haven)
 library(janitor)
 
 # indinc_10_clean data set is use in the function `real_income ()`
-indinc_10 <-read_sas("/Users/junruwu/Desktop/Fall 2022/SDS 270/chns/data-raw/indinc_10.sas7bdat")
+indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
 indinc_10_clean <- indinc_10 %>%
   select(IDind, wave, indwage)%>%
   mutate(indwage = ifelse(indwage < 0 , NA, indwage))
@@ -35,6 +35,9 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 
 
 # map_dat
+library(tidyverse)
+library(haven)
+library(leafletCN)
 indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
 map_dat <- indinc_10 %>%
   select(wave, indwage, t1)%>%
