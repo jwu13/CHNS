@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# CHNS R package <img src='data-raw/hex_bluebike.png' align="right" height="139"/>
+# CHNS R package <img src='data-raw/hex.png' align="right" height="139"/>
 
 <!-- badges: start -->
 
