@@ -30,8 +30,7 @@ num_of_children <- function (year) {
   if (year == 2015) {df <- emw_12_clean}
 
   df <- df %>%
-    mutate(num_children = child_births - child_died) %>%
-    filter(child_died > 0 & child_births > 0 & num_children >0)
+    mutate(num_children = child_births - child_died)
 
   return(df)
 }
