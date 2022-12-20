@@ -25,31 +25,48 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-## Purpose
+## Summary
 
-We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `surveyjanitor` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
+Our package helps researchers explore [China Health and Nutrition Survey](https://www.cpc.unc.edu/projects/china/data) With just a basic knowledge of R, the users can access a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. \
 
-## Target audience
+The package includes two data set that includes individual-level survey data of 10 specific years over the period of 1989 - 2015.\
 
-This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
+There are currently three functions inside the package:\
+
+- `real_income`: takes in a numeric year value and returns a data frame with real income adjusted for inflation.\
+
+- `num_of_children`: takes in a numeric year value and returns a data frame with child births, child deaths, and total children up to the input year.\
+
+- `map_income`: takes in a numeric year value and returns a map of China with province-level average annual income mapped on the surveyed provinces.\
+
+This package would be a useful tool for social science researchers interested in policy analysis in China. Additionally, it is also an easy tool for data analysis and visualization for anyone interested in CHNS.
 
 
 ## Installation
 
-You can install the development version of surveyjanitor like so:
-```{r eval=FALSE}
+You can install the development version of CHNS from [Github] (https://github.com/jwu13/CHNS) with:
+
+```{r}
+# install.packages("devtools")
 devtools::install_github("jwu13/CHNS")
 ```
 
-
-## Load
-
-You can load it by:
-
-```{r example}
+You can load this package by
+```{r}
 library(chns)
-library(leafletCN) #leafletCN needs to be loaded here for `map_income()` function
 ```
+
+For `map_income()` function in the package, you also need to install and load the package leafletCN.
+```{r, eval=FALSE}
+install.packages("leafletCN")
+library(leafletCN)
+```
+
+## Data Sets Included
+
+- `indinc_10_clean`: A data set that includes 88166 survey data entries from 1989 - 2015 with Individual ID, survey year, and nominal individual income.
+- `emw_12_clean`: A data set that includes 26616 survey data entries from 1989 - 2015 with Individual ID, survey year, number of child died and number of child births for women.
+- `map_dat_clean`: A simple data set with province-level average annual income, survey year, province names in both English and Chinese, and categories of income that is used for mapping.
 
 ## Example 1: Get Real Income with selected base year.
 
@@ -64,10 +81,11 @@ real_income(base_year=1989)
 num_of_children(year = 2006) 
 ```
 
-## Example 3: Get a map with province mean income by an input year
+### Data Visualization
+
+- Example 3: Get a map to get an overview of province-level average income.
 
 ![a visualization demo](data-raw/viz_demo.png)
-
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 map_income(year = 2011)
 ```
