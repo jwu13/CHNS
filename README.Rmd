@@ -46,7 +46,7 @@ This package would be a useful tool for social science researchers interested in
 
 You can install the development version of CHNS from [Github] (https://github.com/jwu13/CHNS) with:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 # install.packages("devtools")
 devtools::install_github("jwu13/CHNS")
 ```
