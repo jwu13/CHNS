@@ -36,7 +36,7 @@ All the datasets are taken from [CHNS] (https://www.cpc.unc.edu/projects/china/d
 
 -   `emw_12_clean`: dataset of
 -   `indinc_10_clean`: dataset of
--   `map_dat_clean`: dataset
+-   `map_dat_clean`: dataset 
 
 ## Who should use this package?
 
@@ -47,7 +47,7 @@ This package can be used by researchers and students who are interested in using
 Here's the first 5 rows of the `emw_12_clean` dataset
 
 ```{r}
-head (emw_12_clean)
+head (indinc_10_clean)
 ```
 
 ## What can we do with this package?
@@ -78,13 +78,12 @@ num_of_children(year = 2006)
 
 ## Example 3: Get a map with province mean income by an input year
 
-`map_china(year)`: This function would potentially map the population density by province on the map for the selected year.
+`map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
 
 Income is divided into categories with a unit of 1k.
 ```{r}
 map_income(year = 2006) 
 ```
-
 
 
 
