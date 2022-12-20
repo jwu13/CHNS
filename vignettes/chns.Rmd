@@ -1,5 +1,5 @@
 ---
-title: "chns"
+title: "CHNS"
 author: "Betty Pu, and Junru Wu"
 output: rmarkdown::html_vignette
 vignette: >
@@ -82,9 +82,8 @@ Here is the function for data visualization: `map_income()`
 
 `map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
 
-```{r}
 map_income(year = 2006) 
-```
+
 
 
 
