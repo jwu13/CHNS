@@ -45,6 +45,7 @@ You can load it by:
 
 ```{r example}
 library(chns)
+library(leafletCN) #leafletCN needs to be loaded here for `map_income()` function
 ```
 
 ## Example 1: Get Real Income with selected base year.
