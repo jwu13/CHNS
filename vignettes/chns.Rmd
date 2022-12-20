@@ -87,7 +87,7 @@ real_income(base_year=1989)
 
 - Example 2: Get Number of Children a women has up to an inputted year.
 
-`num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
+`num_of_children(base_year)`: This function returns a data frame with the number of children a woman had up to an inputted year. 
 
 ```{r}
 num_of_children(year = 2006) 
@@ -95,9 +95,10 @@ num_of_children(year = 2006)
 
 Here is the function for data visualization: `map_income()`
 
-- Example 3: Get a map with province mean income by an input year
+- Example 3: Get a map to get an overview of province-level average income.
 
 `map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
+
 ```{r}
 map_income(year = 2006) 
 ```
