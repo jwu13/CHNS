@@ -49,24 +49,8 @@ You can install the development version of CHNS from \[Github\]
 ``` r
 # install.packages("devtools")
 devtools::install_github("jwu13/CHNS")
-#> Downloading GitHub repo jwu13/CHNS@HEAD
-#> cli     (3.4.1 -> 3.5.0) [CRAN]
-#> isoband (0.2.6 -> 0.2.7) [CRAN]
-#> Installing 2 packages: cli, isoband
-#> 
-#>   There are binary versions available but the source versions are later:
-#>         binary source needs_compilation
-#> cli      3.4.1  3.5.0              TRUE
-#> isoband  0.2.6  0.2.7              TRUE
-#> installing the source packages 'cli', 'isoband'
-#>      checking for file ‘/private/var/folders/1h/35wbm1092xnchvv0w4lq5t2h0000gn/T/Rtmpv8sN6K/remotesb9d148f9dc0a/jwu13-CHNS-de22a14/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/1h/35wbm1092xnchvv0w4lq5t2h0000gn/T/Rtmpv8sN6K/remotesb9d148f9dc0a/jwu13-CHNS-de22a14/DESCRIPTION’
-#>   ─  preparing ‘chns’:
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>   ─  building ‘chns_0.0.0.9000.tar.gz’
-#>      
-#> 
+#> Skipping install of 'chns' from a github remote, the SHA1 (81d92b14) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 ```
 
 You can load this package by
@@ -75,8 +59,8 @@ You can load this package by
 library(chns)
 ```
 
-For `map_income()` function in the package, you also need to install and
-load the package leafletCN.
+For `map_income()` function in the package, you need to install and load
+the package leafletCN.
 
 ``` r
 install.packages("leafletCN")
@@ -95,10 +79,12 @@ library(leafletCN)
     annual income, survey year, province names in both English and
     Chinese, and categories of income that is used for mapping.
 
-## Example 1: Get Real Income with selected base year.
+### Basic usage of functions
 
-This is a basic example for `real_income()` that returns a tibble with
-income weighted over inflation for the selected base year.
+-   Example 1: Calculate the real income
+
+This is a basic example for `real_income()` that returns a data frame
+with income weighted with CPI for the selected base year.
 
 ``` r
 real_income(base_year=1989) 
@@ -118,7 +104,11 @@ real_income(base_year=1989)
 #> # … with 88,156 more rows
 ```
 
-## Example 2: Get Number of Children a women has up to an inputted year.
+-   Example 2: Calculate Number of Children a Women has
+
+This is an example for `num_of_children()` that returns a data frame
+with number of child births, number of child deaths, and number of total
+children of women included in the dataset up to the input year.
 
 ``` r
 num_of_children(year = 2006) 
@@ -149,32 +139,7 @@ num_of_children(year = 2006)
 map_income(year = 2011)
 ```
 
-## Project Proposal
-
-We would like to build an R package that makes importing data, tidying
-data and data analysis more user friendly for social science data sets,
-specifically, we’ll be creating the following functions for The China
-Health and Nutrition Survey (CHNS) data. CHNS contains panel data over
-two decades and we would like to reduce repetitive data-tidying work for
-researchers.
-
-We will be creating the following functions for this project, serving
-both data wrangling and data visualization purposes on CHNS data.
-
-### Data Wrangling:
-
-1)  `real_income(base_year)`: This function calculates the
-    deflated/inflated real income based on the selected survey year.
-
-2)  `num_of_children(base_year)`: This function returns the number of
-    children a woman had up to an inputted year.
-
-### Data Visualization:
-
-3)  `map_income(year)`: This function would potentially map the average
-    income by province on the map for the selected year.
-
 ## Group Members
 
--   Junru Wu
--   Betty Pu
+-   [Junru Wu](https://github.com/jwu13)
+-   [Betty Pu](https://github.com/bettyjpu)
