@@ -7,6 +7,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 #' @return A map with the annual average income mapped on China's map for provinces in the survey. For provinces that are not included in the survey, the color is grey.
 #' @import dplyr
 #' @import leaflet
+#' @import leafletCN
 #' @export
 #'
 #'
@@ -23,6 +24,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 
     # map the data
     map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, colorMethod = "factor")
+    map <- map %>% addTitle("Average Income by Province")
     return(map)
   }
 
