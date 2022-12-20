@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# CHNS R package <img src='data-raw/hex_bluebike.png' align="right" height="139"/>
+# CHNS R package <img src='data-raw/hex.png' align="right" height="139"/>
 
 <!-- badges: start -->
 
