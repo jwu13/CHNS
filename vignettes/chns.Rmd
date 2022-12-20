@@ -1,11 +1,12 @@
 ---
-title: "CHNS"
-author: "Betty Pu, and Junru Wu"
-output: rmarkdown::html_vignette
+title: "`CHNS`: A Data Package for Chinese Health and Nutrition Survey Data"
+author: "Betty Pu and Junru Wu"
+date: "`r Sys.Date()`"
 vignette: >
-  %\VignetteIndexEntry{CHNS}
+  %\VignetteIndexEntry{`CHNS`: A Data Package for Chinese Health and Nutrition Survey Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_vignette
 ---
 
 ```{r, include = FALSE}
@@ -26,29 +27,39 @@ library(haven)
 library(leafletCN)
 ```
 
-The `CHNS` package contains data on Chinese Health and Nutrition Survey with 10 years of survey data over the period of 1989 to 2015.
+## Summany
 
-## Inspiration 
-We wanted to create a package that helps researchers explore China Health and Nutrition Survey (CHNS) with just a basic R understanding. The package `CHNS` allows easy access to a wide variety of information regarding effects of the health, nutrition, and family planning policies on the health and nutritional status of its population. CHNS data has both inconsistencies in variable units and ways of recording N/A values, as well as general inconvenience caused by panel data. This package aims to provide a clearer and more efficient way of exploring CHNS Data.
+The `CHNS` package contains data from the [Chinese Health and Nutrition Survey](https://www.cpc.unc.edu/projects/china/data) with 10 years of survey data over the period of 1989 to 2015. The users can use the cleaned data sets and functions for data analysis and visualization.\
+
+The package includes two data set that includes individual-level survey data of 10 specific years over the period of 1989 - 2015.\
+
+There are currently three functions inside the package:\
+
+- `real_income`: takes in a numeric year value and returns a data frame with real income adjusted for inflation.\
+
+- `num_of_children`: takes in a numeric year value and returns a data frame with child births, child deaths, and total children up to the input year.\
+
+- `map_income`: takes in a numeric year value and returns a map of China with province-level average annual income mapped on the surveyed provinces.\
+
+This package would be a useful tool for social science researchers interested in policy analysis in China. Additionally, it is also an easy tool for data analysis and visualization for anyone interested in CHNS.
+
 
 ## Datasets Included
-All the datasets are taken from [CHNS] (https://www.cpc.unc.edu/projects/china/data)
+- `indinc_10_clean`: A data set that includes 88166 survey data entries from 1989 - 2015. IDind is individual's ID, wave is the survey year, and indwage is annual nominal income. Negative and N/A values are recorded as 0 in the cleaned data set.
 
--   `emw_12_clean`: dataset of number of child births and number of child deaths for women included in the survey; negative and N/A values are recorded as 0 in the dataset.
--   `indinc_10_clean`: dataset of individual wage of the observations included in the survey, all negative wage are recorded as zero.
--   `map_dat_clean`: dataset of average annual income by province for the 10 years included in the survey; wage_mean is in unit of RMB, wage_mean_k is in unit of 1000 RMB, and wage_mean_cat are manually constructed categories for mapping.
+- `emw_12_clean`: A data set that includes 26616 survey data entries from 1989 - 2015 with Individual ID, survey year, number of child died and number of child births for women; negative and N/A values are recorded as 0 in the data set.
 
-## Who should use this package?
+- `map_dat_clean`: A simple data set with province-level average annual income, survey year, province names in both English and Chinese, and categories of income that is used for mapping; wage_mean_k is annual average income in unit of ¥1,000, and mage_mean_cat are manually constructed categories in unit of ¥1,000 for mapping.
 
-This package can be used by researchers and students who are interested in using data from China Health and Nutrition Survey (CHNS). Additionally, anyone who’s interested in using CHNS data and wish to simplify the data cleaning process are welcomed to use this package as a data cleaning aid tool.
 
 ## What does the data look like?
 
-Here's the first 5 rows of the `indinc_10_clean` dataset
+Here's the first 5 rows of the `indinc_10_clean` data set.
 
 ```{r}
 head (indinc_10_clean)
 ```
+
 
 ## What can we do with this package?
 
@@ -58,7 +69,13 @@ We can use these functions  as a preliminary data preparing tool to answer resea
 
 Below are some examples of the existing functionality the package provides, including data wrangling and data visualization techniques.
 
-## Example 1: Get Real Income with selected base year.
+```{r, message=FALSE, warning=FALSE}
+library(chns)
+library(dplyr)
+library(leafletCN)
+```
+
+- Example 1: Get Real Income with selected base year.
 
 This is a basic example for `real_income()` that returns a tibble with income weighted over inflation for the selected base year.
 
@@ -68,7 +85,7 @@ This is a basic example for `real_income()` that returns a tibble with income we
 real_income(base_year=1989) 
 ```
 
-## Example 2: Get Number of Children a women has up to an inputted year.
+- Example 2: Get Number of Children a women has up to an inputted year.
 
 `num_of_children(base_year)`: This function returns the number of children a woman had up to an inputted year. 
 
@@ -78,7 +95,7 @@ num_of_children(year = 2006)
 
 Here is the function for data visualization: `map_income()`
 
-## Example 3: Get a map with province mean income by an input year
+- Example 3: Get a map with province mean income by an input year
 
 `map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
 ```{r}
