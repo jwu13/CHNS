@@ -44,10 +44,9 @@ This package would be a useful tool for social science researchers interested in
 
 ## Installation
 
-You can install the development version of CHNS from [Github] (https://github.com/jwu13/CHNS) with:
+You can install the development version of CHNS from [Github](https://github.com/jwu13/CHNS) with:
 
-```{r, message=FALSE, warning=FALSE}
-# install.packages("devtools")
+```{r message=FALSE, warning=FALSE, eval=FALSE}
 devtools::install_github("jwu13/CHNS")
 ```
 
@@ -57,6 +56,7 @@ library(chns)
 ```
 
 For `map_income()` function in the package, you need to install and load the package leafletCN.
+
 ```{r, eval=FALSE}
 install.packages("leafletCN")
 library(leafletCN)

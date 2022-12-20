@@ -43,21 +43,11 @@ tool for data analysis and visualization for anyone interested in CHNS.
 
 ## Installation
 
-You can install the development version of CHNS from \[Github\]
-(<https://github.com/jwu13/CHNS>) with:
+You can install the development version of CHNS from
+[Github](https://github.com/jwu13/CHNS) with:
 
 ``` r
-# install.packages("devtools")
 devtools::install_github("jwu13/CHNS")
-#> 
-#>      checking for file ‘/private/var/folders/1h/35wbm1092xnchvv0w4lq5t2h0000gn/T/Rtmpfsd46G/remotesbdc249536c67/jwu13-CHNS-646fc0b/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/1h/35wbm1092xnchvv0w4lq5t2h0000gn/T/Rtmpfsd46G/remotesbdc249536c67/jwu13-CHNS-646fc0b/DESCRIPTION’
-#>   ─  preparing ‘chns’:
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>   ─  building ‘chns_0.0.0.9000.tar.gz’
-#>      
-#> 
 ```
 
 You can load this package by
