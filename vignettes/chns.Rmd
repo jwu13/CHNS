@@ -34,9 +34,9 @@ We wanted to create a package that helps researchers explore China Health and Nu
 ## Datasets Included
 All the datasets are taken from [CHNS] (https://www.cpc.unc.edu/projects/china/data)
 
--   `emw_12_clean`: dataset of
--   `indinc_10_clean`: dataset of
--   `map_dat_clean`: dataset 
+-   `emw_12_clean`: dataset of number of child births and number of child deaths for women included in the survey; negative and N/A values are recorded as 0 in the dataset.
+-   `indinc_10_clean`: dataset of individual wage of the observations included in the survey, all negative wage are recorded as zero.
+-   `map_dat_clean`: dataset of average annual income by province for the 10 years included in the survey; wage_mean is in unit of RMB, wage_mean_k is in unit of 1000 RMB, and wage_mean_cat are manually constructed categories for mapping.
 
 ## Who should use this package?
 
@@ -44,7 +44,7 @@ This package can be used by researchers and students who are interested in using
 
 ## What does the data look like?
 
-Here's the first 5 rows of the `emw_12_clean` dataset
+Here's the first 5 rows of the `indinc_10_clean` dataset
 
 ```{r}
 head (indinc_10_clean)
@@ -52,11 +52,11 @@ head (indinc_10_clean)
 
 ## What can we do with this package?
 
-We can use this package to...
+We can use this package to analyze and visualize CHNS data. 
+
+We can use these functions  as a preliminary data preparing tool to answer research questions regarding China’s social-economic conditions such as:
 
 Below are some examples of the existing functionality the package provides, including data wrangling and data visualization techniques.
-
-
 
 ## Example 1: Get Real Income with selected base year.
 
@@ -76,11 +76,12 @@ real_income(base_year=1989)
 num_of_children(year = 2006) 
 ```
 
+Here is the function for data visualization: `map_income()`
+
 ## Example 3: Get a map with province mean income by an input year
 
 `map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
 
-Income is divided into categories with a unit of 1k.
 ```{r}
 map_income(year = 2006) 
 ```
