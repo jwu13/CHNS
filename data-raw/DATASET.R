@@ -4,7 +4,6 @@
 
 library(tidyverse)
 library(haven)
-library(janitor)
 
 # `indinc_10_clean` data set is use in the function `real_income ()`
 indinc_10 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/indinc_10.sas7bdat")
@@ -18,7 +17,6 @@ usethis::use_data(indinc_10_clean, overwrite = TRUE)
 # Clean emw_12 dataset
 library(tidyverse)
 library(haven)
-library(janitor)
 
 # emw_12 dataset for funtion `num_of_children( )`
 emw_12 <-read_sas("/Users/dd/Desktop/270/CHNS/data-raw/emw_12.sas7bdat")
@@ -36,7 +34,6 @@ usethis::use_data(emw_12_clean, overwrite = TRUE)
 
 # map_dat
 library(tidyverse)
-library(haven)
 library(leafletCN)
 map_dat <- indinc_10 %>%
   select(wave, indwage, t1)%>%
