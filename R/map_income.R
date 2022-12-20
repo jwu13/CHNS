@@ -24,7 +24,8 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 
     # map the data
     map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, colorMethod = "factor")
-
+      #addTiles() %>%
+      #addControl(title, position = "topleft", className="Average Income by Province")
     return(map)
   }
 
