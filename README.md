@@ -46,6 +46,7 @@ You can load it by:
 
 ``` r
 library(chns)
+library(leafletCN) #leafletCN needs to be loaded here for `map_income()` function
 ```
 
 ## Example 1: Get Real Income with selected base year.
@@ -75,23 +76,25 @@ real_income(base_year=1989)
 
 ``` r
 num_of_children(year = 2006) 
-#> # A tibble: 385 × 5
+#> # A tibble: 17,948 × 5
 #>           IDind  wave child_died child_births num_children
 #>           <dbl> <dbl>      <dbl>        <dbl>        <dbl>
-#>  1 211101015002  1993          1            2            1
-#>  2 211101015002  2000          1            2            1
-#>  3 211101015002  2004          1            2            1
-#>  4 211101019002  1993          2            3            1
-#>  5 211208006001  2000          3            6            3
-#>  6 212201003002  1993          1            3            2
-#>  7 212202002002  1993          1            4            3
-#>  8 212202002002  2000          1            4            3
-#>  9 212202005002  1993          1            4            3
-#> 10 212202006002  1993          1            5            4
-#> # … with 375 more rows
+#>  1 211101001002  1991          0            0            0
+#>  2 211101001002  1993          0            0            0
+#>  3 211101001002  2000          0            1            1
+#>  4 211101002002  1991          0            0            0
+#>  5 211101002002  1993          0            1            1
+#>  6 211101003002  1991          0            0            0
+#>  7 211101003002  1993          0            1            1
+#>  8 211101003002  2000          0            1            1
+#>  9 211101003101  2006          0            1            1
+#> 10 211101004001  1991          0            0            0
+#> # … with 17,938 more rows
 ```
 
 ## Example 3: Get a map with province mean income by an input year
+
+map_income(year = 2006)
 
 Income is divided into categories with a unit of 1k.
 

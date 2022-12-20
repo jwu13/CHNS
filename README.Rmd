@@ -2,6 +2,7 @@
 output: github_document
 ---
 
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -63,9 +64,8 @@ num_of_children(year = 2006)
 
 ## Example 3: Get a map with province mean income by an input year
 
-```{r}
+
 map_income(year = 2006)
-```
 
 Income is divided into categories with a unit of 1k.
 
