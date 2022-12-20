@@ -10,10 +10,8 @@ Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Imports:
     dplyr,
-    janitor,
     leaflet,
     leafletCN,
-    readr,
     haven
 Suggests: 
     knitr,
