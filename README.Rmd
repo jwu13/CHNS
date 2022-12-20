@@ -14,12 +14,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# CHNS
+# CHNS R package <img src='data-raw/hex_bluebike.png' align="right" height="139"/>
 
 <!-- badges: start -->
+
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
 [![R-CMD-check](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 
@@ -64,11 +66,11 @@ num_of_children(year = 2006)
 
 ## Example 3: Get a map with province mean income by an input year
 
+![a visualization demo](data-raw/viz_demo.png)
 
-map_income(year = 2006)
-
-Income is divided into categories with a unit of 1k.
-
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+map_income(year = 2011)
+```
 
 ## Project Proposal
 

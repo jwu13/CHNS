@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# CHNS
+# CHNS R package <img src='data-raw/hex_bluebike.png' align="right" height="139"/>
 
 <!-- badges: start -->
 
@@ -10,6 +10,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/surveyjanitor)](https://CRAN.R-project.org/package=surveyjanitor)
 [![R-CMD-check](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jwu13/CHNS/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 ## Purpose
@@ -94,9 +95,11 @@ num_of_children(year = 2006)
 
 ## Example 3: Get a map with province mean income by an input year
 
-map_income(year = 2006)
+![a visualization demo](data-raw/viz_demo.png)
 
-Income is divided into categories with a unit of 1k.
+``` r
+map_income(year = 2011)
+```
 
 ## Project Proposal
 

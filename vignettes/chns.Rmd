@@ -81,9 +81,9 @@ Here is the function for data visualization: `map_income()`
 ## Example 3: Get a map with province mean income by an input year
 
 `map_income(year)`: This function would potentially map the population density by province on the map for the selected year.
-
+```{r}
 map_income(year = 2006) 
-
+```
 
 
 
