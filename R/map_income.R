@@ -11,7 +11,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 #' @export
 #'
 #'
-
+  library(leafletCN)
 
   map_income <- function (year) {
 
