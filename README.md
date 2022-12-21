@@ -60,7 +60,7 @@ For `map_income()` function in the package, you need to install and load
 the package leafletCN.
 
 ``` r
-install.packages("leafletCN")
+#install.packages("leafletCN")
 library(leafletCN)
 ```
 
