@@ -15,7 +15,3 @@ A map with the annual average income mapped on China's map for provinces in the 
 \description{
 Provides the map of annual province wage an inputted base year
 }
-\examples{
-# map the province-level average annual income in 2006
-map_income_2006 <- map_income(2006)
-}

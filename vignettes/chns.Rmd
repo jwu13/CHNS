@@ -23,7 +23,6 @@ knitr::opts_chunk$set(
 ```{r setup, include=FALSE}
 library(chns)
 library(dplyr)
-library(haven)
 library(leafletCN)
 ```
 

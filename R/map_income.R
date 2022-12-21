@@ -7,9 +7,6 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 #' @import dplyr
 #' @importFrom leafletCN geojsonMap
 #' @export map_income
-#' @examples
-#' # map the province-level average annual income in 2006
-#' map_income_2006 <- map_income(2006)
 
   map_income <- function (year) {
 
@@ -22,7 +19,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
     df <- filter(map_dat_clean, wave == year)
 
     # map the data
-    map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, colorMethod = "factor")
+    map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, palette = "OrRd", colorMethod = "factor")
     return(map)
   }
 
