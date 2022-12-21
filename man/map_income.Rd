@@ -2,16 +2,16 @@
 % Please edit documentation in R/map_income.R
 \name{map_income}
 \alias{map_income}
-\title{Function for mapping average income by year and provinces included in the survey for provinces included in the survey.}
+\title{Function for mapping average income by year and provinces included in the survey}
 \usage{
 map_income(year)
 }
 \arguments{
-\item{year}{valid survey year. (1989, 1991, 1993, 1997, 2000, 2004, 2006, 2009, 2011, 2015)}
+\item{year}{survey year. Find possible years in the  \code{map_dat_clean} data frame.}
 }
 \value{
 A map with the annual average income mapped on China's map for provinces in the survey. For provinces that are not included in the survey, the color is grey.
 }
 \description{
-Provides the map of annual province wage an inputted base year
+Provides the map of annual province wage an inputted base year (1989,1991,1993,1997,2000,2004,2006,2009,2011,2015) for provinces included in the survey.
 }
