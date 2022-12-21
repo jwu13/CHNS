@@ -85,11 +85,8 @@ map_dat_merge <- merge(map_dat,province_name,by="province_en")
 map_dat_clean <- map_dat_merge %>%
   mutate(wage_mean_k = wage_mean/1000)
   # create categories
-map_dat_clean$wage_mean_cat = cut(map_dat_clean$wage_mean_k, c(1.25,2.5, 5, 10, 15, 20, 25, 35, 45, 65))
+map_dat_clean$wage_mean_cat = cut(map_dat_clean$wage_mean_k, c(1.25, 1.5, 2.5, 5, 10, 15, 20, 25, 35, 45, 65))
 
 usethis::use_data(map_dat_clean, overwrite = TRUE)
-
-
-
 
 
