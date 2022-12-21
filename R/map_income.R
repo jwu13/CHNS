@@ -8,11 +8,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
 #' @import dplyr
 #' @import leafletCN
 #' @export map_income
-#' @examples
-#' # show user the average income for the surveyed provinces in 2006.
-#' map_income(2006)
-#'
-#'
+
 
   map_income <- function (year) {
 
