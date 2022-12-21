@@ -23,7 +23,7 @@ globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mea
     df <- filter(map_dat_clean, wave == year)
 
     # map the data
-    map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, colorMethod = "factor", legendTitle = "Average Annual Income (unit = ¥1000)", palette="RdYlGn")
+    map <- geojsonMap(df, "china", namevar = ~name, valuevar = ~wage_mean_cat, colorMethod = "factor", legendTitle = "Average Annual Income in 1000 rmb", palette="RdYlGn")
     return(map)
   }
 
