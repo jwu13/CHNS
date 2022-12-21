@@ -3,18 +3,16 @@
 \docType{data}
 \name{emw_12_clean}
 \alias{emw_12_clean}
-\title{Number of ever married women and number of children}
+\title{Number of Children Data
+A dataset that includes number of children for ever-married-women.}
 \format{
-\subsection{\code{emw_12_clean}}{
-
-A data frame with 26,616 rows and 60 columns:
+A data frame with 26,616 rows and 60 columns.
 \describe{
-\item{IDind}{individual identification number}
+\item{IDind}{The IDind is a twelve-digit numeric variable that uniquely identified for all participants. Each participant will have the same ID in all datasets and in all survey years. }
 \item{wave}{survey year}
-\item{child_died}{Number of Children who died}
+\item{child_died}{Total number of Children who died}
 \item{child_births}{Total number of Children given births to}
 ...
-}
 }
 }
 \source{
@@ -24,6 +22,7 @@ A data frame with 26,616 rows and 60 columns:
 emw_12_clean
 }
 \description{
-Number of ever married women and number of children
+Number of Children Data
+A dataset that includes number of children for ever-married-women.
 }
 \keyword{datasets}

@@ -5,14 +5,11 @@
 \alias{indinc_10_clean}
 \title{Annual Income from CHNS survey from 1989 to 2011}
 \format{
-\subsection{\code{indinc_10_clean}}{
-
-A data frame with 62,029 rows and 32 columns:
+A data frame with 62,029 rows and 32 columns.
 \describe{
-\item{IDind}{individual identification number}
+\item{IDind}{The IDind is a twelve-digit numeric variable that uniquely identified for all participants. Each participant will have the same ID in all datasets and in all survey years. }
 \item{wave}{survey year}
-\item{indwage}{annual wage, bonus, and other income}
-}
+\item{indwage}{nominal annual income}
 }
 }
 \source{

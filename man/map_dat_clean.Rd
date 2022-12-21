@@ -3,19 +3,17 @@
 \docType{data}
 \name{map_dat_clean}
 \alias{map_dat_clean}
-\title{Data set for mapping average income on China's map}
+\title{Province-level average income data
+Data set with annual average wage for the provinces and years included in the survey.}
 \format{
-\subsection{\code{map_dat_clean}}{
-
-A data frame that could map the average income by selected province and year:
+A data frame that could map the average income by selected province and year.
 \describe{
-\item{province_en}{province names in english}
+\item{province_en}{province names in English}
 \item{wave}{survey year}
-\item{wage_mean}{intial wage in unit of 1}
-\item{name}{name of provinces in chinese}
-\item{wage_mean_k}{wage in unit of 1000}
-\item{wage_mean_cat}{mean wage in unit of 1000 divided into categories for mapping}
-}
+\item{wage_mean}{Annual average wage in unit of ¥1}
+\item{name}{province names in Chinese}
+\item{wage_mean_k}{Annual average income in unit of ¥1,000}
+\item{wage_mean_cat}{Annual average income in unit of ¥1,000 divided into categories for mapping.}
 }
 }
 \source{
@@ -25,6 +23,7 @@ A data frame that could map the average income by selected province and year:
 map_dat_clean
 }
 \description{
-Data set for mapping average income on China's map
+Province-level average income data
+Data set with annual average wage for the provinces and years included in the survey.
 }
 \keyword{datasets}
