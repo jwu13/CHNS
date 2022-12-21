@@ -59,7 +59,7 @@ For `map_income()` function in the package, you need to install and load the pac
 
 ```{r, eval=FALSE}
 #install.packages("leafletCN")
-library(leafletCN)
+#library(leafletCN)
 ```
 
 ## Data Sets Included

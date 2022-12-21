@@ -1,14 +1,16 @@
 globalVariables(c("map_dat_clean","indwage","wave","province", "year", "wage_mean_cat"))
 #' Function for mapping average income by year and provinces included in the survey
 #'
-#' Provides the map of annual province wage an inputted base year (1989,1991,1993,1997,2000,2004,2006,2009,2011,2015) for provinces included in the survey.
+#' Provides the map of annual province wage an inputted base year (1989, 1991, 1993, 1997, 2000, 2004, 2006, 2009, 2011, 2015) for provinces included in the survey.
 #'
 #' @param year survey year. Find possible years in the  `map_dat_clean` data frame.
 #' @return A map with the annual average income mapped on China's map for provinces in the survey. For provinces that are not included in the survey, the color is grey.
 #' @import dplyr
 #' @import leafletCN
 #' @export map_income
-#' @example map_income_2006 <- map_income(2006)
+#' @examples
+#' # show user the average income for the surveyed provinces in 2006.
+#' map_income(2006)
 #'
 #'
 
